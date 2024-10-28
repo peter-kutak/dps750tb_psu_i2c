@@ -158,7 +158,10 @@ void PMBus::check_model() {
   
   // Model specific setup.
 
-  if (strncmp(&mfr_model[1],"DPS750TB1",9) == 0) {
+  if (
+    (strncmp(&mfr_model[1], "DPS750TB1", 9) == 0) || 
+    (strncmp(&mfr_model[1], "S13-", 4) == 0)
+    ) {
 
     status_reg[5] = 0;
     status_reg[6] = 0;
